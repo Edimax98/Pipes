@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import SpriteKit
 
 class Cell {
-    
+    var sprite: SKSpriteNode?
 }

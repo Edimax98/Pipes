@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 let NumOfRows = 5
-let NumOfColumns = 11
+let NumOfColumns = 10
 
 class Level {
     
@@ -31,20 +31,35 @@ class Level {
             let cellRow = NumOfRows - row - 1
             
             for (column, value) in rowArray.enumerated() {
-                if value == 1 {
+                
+                switch value {
+                case 1:
                     cells[column, cellRow] = Cell()
+                    
+                case 2:
+                    self.cells[column, cellRow] = Cell()
+                    self.cells[column, cellRow]?.sprite = SKSpriteNode(imageNamed: "startPipe")
+                    self.cells[column, cellRow]?.sprite?.name = "start"
+                    
+                case 3:
+                    self.cells[column, cellRow] = Cell()
+                    self.cells[column, cellRow]?.sprite = SKSpriteNode(imageNamed: "endPipe")
+                    self.cells[column, cellRow]?.sprite?.name = "end"
+                    
+                default:
+                    cells[column, cellRow] = nil
                 }
             }
         }
     }
     
-    func showBoxes() -> Array<SKSpriteNode> {
-        let array = pipeMaker.renderBoxes()
-        return array
-    }
-
-    func showPipes() -> Array<Pipes>{
-       let array =  pipeMaker.renderPipes()
-        return array
-    }
+        func showBoxes() -> Array<SKSpriteNode> {
+            let array = pipeMaker.renderBoxes()
+            return array
+        }
+        
+        func showPipes() -> Array<Pipes>{
+            let array =  pipeMaker.renderPipes()
+            return array
+        }
 }

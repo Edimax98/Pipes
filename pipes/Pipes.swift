@@ -9,7 +9,6 @@
 import Foundation
 import SpriteKit
 
-
 enum TypesOfPipe: Int{
     case unknown = 0, anglePipeRight, anglePipeLeft,horizontalStraightPipe, verticalStraightPipe
     
@@ -21,6 +20,34 @@ enum TypesOfPipe: Int{
             "verticalStraightPipe"
         ]
         return spritesName[rawValue - 1]
+    }
+    
+    func getBitMap() -> [[Bool]] {
+        switch self {
+        case .horizontalStraightPipe:           // |
+            return [[false , true , false],
+                    [false , false , false],
+                    [false , true , false],]
+            
+        case .verticalStraightPipe:             // --
+            return [[false , false , false],
+                    [true , false , true],
+                    [false , false, false],]
+            
+        case .anglePipeLeft:                    // _|
+            return [[false , true, false],
+                    [true , false , false],
+                    [false , false, false],]
+            
+        case .anglePipeRight:                    // |_
+            return [[false , true , false],
+                    [false , false , true],
+                    [false , false, false],]
+        default:
+            return [[false , false , false],
+                    [false , false , false],
+                    [false , false, false],]
+        }
     }
     
    static func random() -> TypesOfPipe{
