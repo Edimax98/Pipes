@@ -53,13 +53,17 @@ class Level {
         }
     }
     
-        func showBoxes() -> Array<SKSpriteNode> {
-            let array = pipeMaker.renderBoxes()
-            return array
-        }
-        
-        func showPipes() -> Array<Pipes>{
-            let array =  pipeMaker.renderPipes()
-            return array
-        }
+    func createRandomPipe() -> Pipes {
+        return Pipes(typeOfPipe: TypesOfPipe.random())
+    }
+    
+    func showBoxes() -> Array<SKSpriteNode> {
+        let array = pipeMaker.renderBoxes()
+        return array
+    }
+    
+    func showPipes() -> Array<Pipes>{
+        let array =  pipeMaker.renderPipes()
+        return array
+    }
 }
