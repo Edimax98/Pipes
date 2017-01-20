@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "verPipe.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "straightPipe@2x.png",
+      "filename" : "verPipe@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "straightPipe@3x.png",
+      "filename" : "verPipe@3x.png",
       "scale" : "3x"
     }
   ],

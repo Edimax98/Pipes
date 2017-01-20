@@ -18,11 +18,13 @@ class GameScene: SKScene {
     private var selectedPipe = SKNode()
     private var boxesPositionsArray = Array<CGPoint>()
     private var reservedCells = Array<(Int)>()
-    private var movingSelectedPipe = Pipes(typeOfPipe: .unknown)
+    
+    private var startPipeConnected = false
+    private var endPipeConnected = false
     
     private var pipesArray = Array<Pipes>()
     private var pipesOnGameField = [Int : Pipes]()
-    private var cellsArray = [[SKSpriteNode]]()
+    private var plumbingArray = Array<Pipes>()
     
     private var selectedPipeInitialPosition = CGPoint()
     private let cellsHeight: CGFloat = 50.0
@@ -32,6 +34,22 @@ class GameScene: SKScene {
     private let gameLayer = SKNode()
     private let cellLayer = SKNode()
     private let pipeMakerLayer = SKNode()
+    private var startPipePosition = CGPoint()
+    private var endPipePosition = CGPoint()
+    
+    private var anglePipeLeftTextureAtlas = SKTextureAtlas()
+    private var anglePipeRightTextureAtlas = SKTextureAtlas()
+    private var verticalStraightTextureAtlas = SKTextureAtlas(named: "verticalStraightPipe")
+    private var horizontalStraightTextureAtlas = SKTextureAtlas()
+    private var rightAngleDownTextureAtlas = SKTextureAtlas()
+    private var leftAngleDownTextureAtlas = SKTextureAtlas()
+
+    private var anglePipeLeftTextureArray = Array<SKTexture>()
+    private var anglePipeRightTextureArray = Array<SKTexture>()
+    private var verticalStraightTextureArray = Array<SKTexture>()
+    private var horizontalStraightTextureArray = Array<SKTexture>()
+    private var rightAngleDownTextureArray = Array<SKTexture>()
+    private var leftAngleDownTextureArray = Array<SKTexture>()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
@@ -49,10 +67,7 @@ class GameScene: SKScene {
         background.addChild(gameLayer) // для всего нашего игрового поля
         
         pipeMakerLayer.name = "pipeMakerLayer"
-        // pipeMakerLayer.frame.size.height = boxHeight * AmountOfInitialPipes
-        // pipeMakerLayer.frame.size.width = boxWidth
         background.addChild(pipeMakerLayer)
-        
         
         let layerPosition = CGPoint(
             x: -cellsWidth * CGFloat(NumOfColumns) / 2,
@@ -62,6 +77,24 @@ class GameScene: SKScene {
         cellLayer.name = "cellLayer"
         gameLayer.addChild(cellLayer)
         
+//        anglePipeLeftTextureAtlas = SKTextureAtlas()
+//        anglePipeRightTextureAtlas = SKTextureAtlas()
+//        verticalStraightTextureAtlas = SKTextureAtlas()
+//        rightAngleDownTextureAtlas = SKTextureAtlas()
+//        leftAngleDownTextureAtlas = SKTextureAtlas()
+        verticalStraightTextureArray = fillSkTextureArray(atlas: verticalStraightTextureAtlas)
+    }
+    
+    fileprivate func fillSkTextureArray(atlas: SKTextureAtlas) -> Array<SKTexture> {
+        var array = Array<SKTexture>()
+        var i = 1
+        while(i <= atlas.textureNames.count / 3) {
+            let name = "verticalStraightPipeWater" + "\(i)"
+            array.append(SKTexture(imageNamed: name))
+            i += 1
+        }
+        print("Count Of TEXTURES \(atlas.textureNames.count)")
+        return array
     }
     
     func boundLayerPos(aNewPosition: CGPoint) -> CGPoint { //???
@@ -118,36 +151,46 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let array = pipeMakerLayer[pipeNodeName]
         let arrayOfCells = cellLayer.children
         var i = 0
         
-//        while (i < cellLayer.children.count) {
-//            print(" cell layer #\(i) name --> \(cellLayer.children[i].name) position --> \(cellLayer.children[i].position)")
-//            i += 1
-//        }
+        while (i < cellLayer.children.count) {
+            print(" cell layer #\(i) name --> \(cellLayer.children[i].name) position --> \(cellLayer.children[i].position)")
+            i += 1
+        }
         
-        if let index = array.index(of: selectedPipe) {
-            if (!replaceSelectedPipeInAvailablePlace(sprites: arrayOfCells, name: "cell")) {
-                selectedPipe.position = boxesPositionsArray[index]
-            } else {
-                
-                fillInPipesOnGameFieldDictionary()
-                addPipeIntoEmptyBox()
-                print("index = \(index)")
-                
-                for (key,value) in pipesOnGameField {
-                    print("INFO PIPES ON GAME FIELD: key -> \(key) value -> \(value.typeOfPipe)" )
-                }
-                
-                for i in pipesArray {
-                    print("PIPES ARR INFO: name - \(i.sprite?.name); type - \(i.typeOfPipe)")
-                }
-                
-                print("count of reserved cells \(cellLayer["reserved"].count)")
-                print("count of children cellLayer \(cellLayer.children.count)")
-                return
+        if (!replaceSelectedPipeInAvailablePlace(sprites: arrayOfCells, name: "cell")) {
+            selectedPipe.position = selectedPipeInitialPosition
+            print("index of box - > \(index)")
+        } else {
+            
+            fillInPipesOnGameFieldDictionary()
+            addPipeIntoEmptyBox()
+            connectPipe()
+            
+            
+            print("count of pipe IN PLUMBING - \(plumbingArray.count)")
+            for pipe in plumbingArray {
+                print("INFO about PLUMBING: type - \(pipe.typeOfPipe)")
             }
+            
+            for (key,value) in pipesOnGameField {
+                print("INFO PIPES ON GAME FIELD: key -> \(key) value -> \(value.typeOfPipe) connected? - > \(value.pipeConnected)")
+                
+                if(value.typeOfPipe == .verticalStraightPipe){
+                    if(selectedPipe.position == value.sprite?.position) {
+                        value.sprite?.run(SKAction.animate(with: verticalStraightTextureArray, timePerFrame: 0.1))                    }
+                }
+                
+            }
+            
+            for i in pipesArray {
+                print("PIPES ARR INFO: name - \(i.sprite?.name); type - \(i.typeOfPipe)")
+            }
+            
+            print("count of reserved cells \(cellLayer["reserved"].count)")
+            print("count of children cellLayer \(cellLayer.children.count)")
+            return
         }
     }
     
@@ -190,10 +233,10 @@ class GameScene: SKScene {
                     
                     if level.cellAt(column: column, row: row) != nil {
                         let cellNode = SKSpriteNode(imageNamed: "Cell")
-                        cellNode.name = "cell" + String(row) + "-" + String(column)
+                        cellNode.name = "cell" //+ String(row) + "-" + String(column)
                         cellNode.size = CGSize(width: cellsWidth, height: cellsHeight)
                         cellNode.position = pointFor(column: column, row: row)
-                       // print("\(cellNode.name) ---> \(cellNode.position)")
+                        // print("\(cellNode.name) ---> \(cellNode.position)")
                         cellNode.alpha = 0.65
                         cellLayer.addChild(cellNode)
                     }
@@ -225,7 +268,7 @@ class GameScene: SKScene {
         var i: CGFloat = 0.0
         for _ in boxes {
             let sprite = SKSpriteNode(imageNamed: "OpenedBox")
-            sprite.name = "box" //+ String(describing: i)
+            sprite.name = "box"
             sprite.size = CGSize(width: boxWidth, height: boxHeight)
             sprite.position.y = i * boxHeight - boxWidth/2 - 20
             sprite.position.x = (scene?.anchorPoint.x)! - (scene?.size.width)!/2 + boxWidth/2 + 5
@@ -250,10 +293,12 @@ class GameScene: SKScene {
     fileprivate func replaceSelectedPipeInAvailablePlace(sprites: Array<SKNode>, name: String) -> Bool {
         for sprite in sprites {
             
-            if (sprite.intersects(selectedPipe) && sprite.name!.contains(name)) {
+            if (sprite.intersects(selectedPipe) &&
+                sprite.name!.contains(name) &&
+                !selectedPipe.inParentHierarchy(cellLayer)) {
+                
                 selectedPipe.move(toParent: sprite.parent!)
                 print("\(selectedPipe.name) and its parent  \(selectedPipe.parent?.name)")
-                // print("\(sprite.name) position in loop \(sprite.position)")
                 selectedPipe.position = sprite.position
                 sprite.name = "reserved"
                 return true
@@ -261,20 +306,6 @@ class GameScene: SKScene {
         }
         return false
     }
-    
-    //    func findPipeNearBy(cellName: String) -> Pipes {
-    //        let pipeNearBy = Pipes(typeOfPipe: .unknown)
-    //
-    //        for pipe in pipesOnGameFieldArray {
-    //            if (pipe.sprite?.position)! == cellLayer[cellName][0].position {
-    //
-    //            }
-    //        }
-    //
-    //        return pipeNearBy
-    //    }
-    //
-
     
     // Заполняет словарь труб на игровом поле
     // Ключ - индекс в массиве CellLayer.children
@@ -286,12 +317,11 @@ class GameScene: SKScene {
                 print("index has found \(j)")
                 
                 for i in 0..<pipesArray.count {
-                    print("i = \(i)")
                     if (pipesArray[i].sprite?.inParentHierarchy(cellLayer))! &&
                         pipesArray[i].sprite?.position == cellLayer.children[j].position {
-                        
+                        print("type in double loop \(pipesArray[i].typeOfPipe)")
                         pipesOnGameField[j] = pipesArray[i]
-                        pipesArray.remove(at: i)
+                        //pipesArray.remove(at: i)r
                     }
                 }
             }
@@ -299,8 +329,16 @@ class GameScene: SKScene {
     }
     
     fileprivate func cellIndexReserved(cell index: Int) -> Bool {
-        if(cellLayer.children[index].name == "reserved") {
-            return true
+        print("Checking INDEX - \(index)")
+        if (index > NumOfColumns*NumOfRows || index < 0) {
+            return false
+        } else {
+            
+            if(cellLayer.children[index].name == "reserved" &&
+                (cellLayer.children[index+1].name != "start" &&
+                    cellLayer.children[index+1].name != "end")) {
+                return true
+            }
         }
         return false
     }
@@ -309,14 +347,14 @@ class GameScene: SKScene {
     fileprivate func addPipeIntoEmptyBox() {
         
         let newPipe = level.createRandomPipe()
-        if (selectedPipe.position != selectedPipeInitialPosition) {
+        if (selectedPipe.position != selectedPipeInitialPosition && selectedPipe.inParentHierarchy(cellLayer)) {
             let sprite = SKSpriteNode(imageNamed: newPipe.typeOfPipe.spritesName)
             sprite.position = selectedPipeInitialPosition
             sprite.name = pipeNodeName
             sprite.zPosition = 1
             pipeMakerLayer.addChild(sprite)
             newPipe.sprite = sprite
-        
+            
             popAnimation(sprite: sprite)
             pipesArray.append(newPipe)
         } else {
@@ -333,7 +371,6 @@ class GameScene: SKScene {
         return true
     }
     
-    
     // Происходит увеличение размера спрайта и возврат к первоначальному
     fileprivate func popAnimation(sprite: SKSpriteNode) {
         let initialSize = sprite.size
@@ -348,19 +385,128 @@ class GameScene: SKScene {
         sprite.run(SKAction.sequence([scaleUp,scaleDown,scaleToInitial]))
     }
     
+    fileprivate func connectPipe() {
+        let startPipeIndex = findIndexOfMainPipe(name: "start")
+        let endPipeIndex = findIndexOfMainPipe(name: "end")
+        
+        print("start pipe index -> \(startPipeIndex)")
+        print("children index + 1 name = \(cellLayer.children[startPipeIndex + 1].name)")
+        
+        if(!startPipeConnected) {
+            
+            if(cellLayer.children[startPipeIndex + 2].name == "reserved") {
+                let bitMap = pipesOnGameField[startPipeIndex + 2]!.typeOfPipe.getBitMap()
+                
+                if(bitMap[1][0]) {
+                    startPipeConnected = true
+                    pipesOnGameField[startPipeIndex + 2]?.pipeConnected.firstSide = true
+                    plumbingArray.append(pipesOnGameField[startPipeIndex + 2]!)
+                }
+            }
+        } else {
+            
+            for (index,pipe) in pipesOnGameField {
+                
+                print("index in dict \(index)")
+                print("end connected ? -> \(endPipeConnected); ")
+                checkConnectWithEnd(index: endPipeIndex, pipe: pipe)
+                
+                if(cellIndexReserved(cell: index)) {
+                    
+                    if (cellIndexReserved(cell: index+1)){
+                        
+                        let bitMapNext = pipesOnGameField[index+1]!.typeOfPipe.getBitMap()
+                        let bitMapPrev = pipe.typeOfPipe.getBitMap()
+                        
+                        if(bitMapNext[1][0] && bitMapPrev[1][2]) {
+                            pipesOnGameField[index + 1]?.pipeConnected.firstSide = true
+                            pipe.pipeConnected.secondSide = true
+                            //plumbingArray.append(pipesOnGameField[index + 1]!)
+                        }
+                    }
+                    // Если на клетку выше
+                    if(cellIndexReserved(cell: index+NumOfColumns)) {
+                        
+                        let bitMapNext = pipesOnGameField[index+NumOfColumns]!.typeOfPipe.getBitMap()
+                        let bitMapPrev = pipe.typeOfPipe.getBitMap()
+                        
+                        print("Если на клетку выше битмап прошлый = \(bitMapPrev)")
+                        
+                        if(bitMapPrev[0][1] && bitMapNext[2][1]) {
+                            pipesOnGameField[index+NumOfColumns]!.pipeConnected.firstSide = true
+                            pipe.pipeConnected.secondSide = true
+                            plumbingArray.append(pipesOnGameField[index + NumOfColumns]!)
+                        }
+                    }
+                    // Если труба слева
+                    if(cellIndexReserved(cell: index-1) && !pipesOnGameField[index - 1]!.pipeConnected.firstSide) {
+                        
+                        let bitMapNext = pipesOnGameField[index-1]!.typeOfPipe.getBitMap()
+                        let bitMapPrev = pipe.typeOfPipe.getBitMap()
+                        
+                        if(bitMapNext[1][2] && bitMapPrev[1][0]) {
+                            pipesOnGameField[index-1]!.pipeConnected.secondSide = true
+                            pipe.pipeConnected.firstSide = true
+                            plumbingArray.append(pipesOnGameField[index-1]!)
+                        }
+                    }
+                    // Если труба внизу
+                    if(cellIndexReserved(cell: index - NumOfColumns) &&
+                        !pipesOnGameField[index - NumOfColumns]!.pipeConnected.firstSide) {
+                        
+                        let bitMapPrev = pipe.typeOfPipe.getBitMap()
+                        let bitMapNext = pipesOnGameField[index-NumOfColumns]!.typeOfPipe.getBitMap()
+                        
+                        print("Если на клетку ниже битмап прошлый = \(bitMapPrev)")
+                        
+                        if(bitMapNext[0][1] && bitMapPrev[2][1]) {
+                            pipesOnGameField[index-NumOfColumns]!.pipeConnected.firstSide = true
+                            pipe.pipeConnected.secondSide = true
+                            plumbingArray.append(pipesOnGameField[index-NumOfColumns]!)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
-    //    func movablePipesOnGameField() -> Array<Pipes> {
-    //        var pipesOnGameField = Array<Pipes>()
-    //
-    //        for pipe in pipesArray {
-    //
-    //            print("parent name of pipe in loop\(pipe.sprite?.parent?.name)")
-    //
-    //            if pipe.sprite!.inParentHierarchy(cellLayer) {
-    //                pipesOnGameField.append(pipe)
-    //            }
-    //        }
-    //
-    //        return pipesOnGameField
-    //    }
+    
+    // проверка на подсоединение трубы к сливу
+    fileprivate func checkConnectWithEnd(index: Int,pipe: Pipes) {
+        
+        if(!endPipeConnected) {
+            
+            if(cellIndexReserved(cell: index+2) && pipesOnGameField[index+2]!.pipeConnected.firstSide) {
+                pipesOnGameField[index+2]!.pipeConnected.secondSide = true
+                endPipeConnected = true
+            }
+            
+            if(cellIndexReserved(cell: index-1) && pipesOnGameField[index-1]!.pipeConnected.firstSide) {
+                pipesOnGameField[index-1]!.pipeConnected.secondSide = true
+                endPipeConnected = true
+            }
+            
+            if(cellIndexReserved(cell: index-NumOfColumns) && pipesOnGameField[index-NumOfColumns]!.pipeConnected.firstSide) {
+                pipesOnGameField[index-NumOfColumns]!.pipeConnected.secondSide = true
+                endPipeConnected = true
+            }
+            
+            if(cellIndexReserved(cell: index+NumOfColumns) && pipesOnGameField[index+NumOfColumns]!.pipeConnected.firstSide) {
+                pipesOnGameField[index+NumOfColumns]!.pipeConnected.secondSide = true
+                endPipeConnected = true
+            }
+        }
+    }
+
+    fileprivate func findIndexOfMainPipe(name: String) -> Int{
+        var index = 0
+        
+        for i in 0..<cellLayer.children.count {
+            
+            if (cellLayer.children[i].name == name) {
+                index = i - 1
+            }
+        }
+        return index
+    }
 }
