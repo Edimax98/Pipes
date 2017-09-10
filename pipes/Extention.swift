@@ -2,7 +2,7 @@
 //  Extention.swift
 //  pipes
 //
-//  Created by Даниил Смирнов on 07.12.16.
+//  Created by Даниил Смирнов
 //  Copyright © 2016 Даниил Смирнов. All rights reserved.
 //
 

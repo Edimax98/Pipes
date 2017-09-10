@@ -1,0 +1,782 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 27,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Array2D.swift",
+      "line": 14,
+      "symbol": "Array2D.columns",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Array2D.swift",
+      "line": 15,
+      "symbol": "Array2D.rows",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Array2D.swift",
+      "line": 16,
+      "symbol": "Array2D.array",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Array2D.swift",
+      "line": 18,
+      "symbol": "Array2D.init(columns:rows:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Extention.swift",
+      "line": 12,
+      "symbol": "Dictionary.loadJSONFromBundle(filename:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 11,
+      "symbol": "pipeNodeName",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 13,
+      "symbol": "GameScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 15,
+      "symbol": "GameScene.level",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 16,
+      "symbol": "GameScene.viewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 18,
+      "symbol": "GameScene.background",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 19,
+      "symbol": "GameScene.levelTimerLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 20,
+      "symbol": "GameScene.victoryLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 21,
+      "symbol": "GameScene.defeatLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 22,
+      "symbol": "GameScene.selectedPipe",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 23,
+      "symbol": "GameScene.boxesPositionsArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 24,
+      "symbol": "GameScene.reservedCells",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 26,
+      "symbol": "GameScene.startPipeConnected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 27,
+      "symbol": "GameScene.endPipeConnected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 29,
+      "symbol": "GameScene.pipesArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 30,
+      "symbol": "GameScene.pipesOnGameField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 31,
+      "symbol": "GameScene.plumbingArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 32,
+      "symbol": "GameScene.plumbingDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 34,
+      "symbol": "GameScene.selectedPipeInitialPosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 35,
+      "symbol": "GameScene.cellsHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 36,
+      "symbol": "GameScene.cellsWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 37,
+      "symbol": "GameScene.boxHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 38,
+      "symbol": "GameScene.boxWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 39,
+      "symbol": "GameScene.gameLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 40,
+      "symbol": "GameScene.cellLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 41,
+      "symbol": "GameScene.pipeMakerLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 42,
+      "symbol": "GameScene.startPipePosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 43,
+      "symbol": "GameScene.endPipePosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 44,
+      "symbol": "GameScene.countOfSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 46,
+      "symbol": "GameScene.sequenceActionArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 47,
+      "symbol": "GameScene.button",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 50,
+      "symbol": "GameScene.anglePipeLeftWaterLeftFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 51,
+      "symbol": "GameScene.anglePipeLeftWaterRightFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 52,
+      "symbol": "GameScene.anglePipeRightWaterLeftFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 53,
+      "symbol": "GameScene.anglePipeRightWaterRightFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 54,
+      "symbol": "GameScene.verticalStraightPipeWaterDownFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 55,
+      "symbol": "GameScene.verticalStraightPipeWaterUpFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 56,
+      "symbol": "GameScene.horizontalStraightPipeWaterLeftFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 57,
+      "symbol": "GameScene.horizontalStraightPipeWaterRightFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 58,
+      "symbol": "GameScene.rightAnglePipeDownWaterDownFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 59,
+      "symbol": "GameScene.rightAnglePipeDownWaterUpFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 60,
+      "symbol": "GameScene.leftAnglePipeDownWaterDownFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 61,
+      "symbol": "GameScene.leftAnglePipeDownWaterUpFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 64,
+      "symbol": "GameScene.anglePipeLeftWaterLeftTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 65,
+      "symbol": "GameScene.anglePipeLeftWaterRightTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 66,
+      "symbol": "GameScene.anglePipeRightWaterLeftTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 67,
+      "symbol": "GameScene.anglePipeRightWaterRightTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 68,
+      "symbol": "GameScene.verticalStraightPipeWaterDownTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 69,
+      "symbol": "GameScene.verticalStraightPipeWaterUpTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 70,
+      "symbol": "GameScene.horizontalStraightPipeWaterLeftTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 71,
+      "symbol": "GameScene.horizontalStraightPipeWaterRightTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 72,
+      "symbol": "GameScene.rightAnglePipeDownWaterDownTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 73,
+      "symbol": "GameScene.rightAnglePipeDownWaterUpTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 74,
+      "symbol": "GameScene.leftAnglePipeDownWaterDownTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 75,
+      "symbol": "GameScene.leftAnglePipeDownWaterUpTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 78,
+      "symbol": "GameScene.anglePipeLeftWaterLeftTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 79,
+      "symbol": "GameScene.anglePipeLeftWaterRightTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 80,
+      "symbol": "GameScene.anglePipeRightWaterLeftTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 81,
+      "symbol": "GameScene.anglePipeRightWaterRightTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 82,
+      "symbol": "GameScene.verticalStraightPipeWaterDownTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 83,
+      "symbol": "GameScene.verticalStraightPipeWaterUpTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 84,
+      "symbol": "GameScene.horizontalStraightPipeWaterLeftTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 85,
+      "symbol": "GameScene.horizontalStraightPipeWaterRightTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 86,
+      "symbol": "GameScene.rightAnglePipeDownWaterDownTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 87,
+      "symbol": "GameScene.rightAnglePipeDownWaterUpTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 88,
+      "symbol": "GameScene.leftAnglePipeDownWaterDownTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 89,
+      "symbol": "GameScene.leftAnglePipeDownWaterUpTextureArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 90,
+      "symbol": "GameScene.vc",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 92,
+      "symbol": "GameScene.levelTimerValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 98,
+      "symbol": "GameScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 102,
+      "symbol": "GameScene.init(size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 213,
+      "symbol": "GameScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 220,
+      "symbol": "GameScene.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameScene.swift",
+      "line": 240,
+      "symbol": "GameScene.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 13,
+      "symbol": "GameViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 15,
+      "symbol": "GameViewController.scene",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 16,
+      "symbol": "GameViewController.level",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 18,
+      "symbol": "GameViewController.prefersStatusBarHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 22,
+      "symbol": "GameViewController.shouldAutorotate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 26,
+      "symbol": "GameViewController.supportedInterfaceOrientations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift",
+      "line": 30,
+      "symbol": "GameViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 13,
+      "symbol": "MainMenuViewController.startGameButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 15,
+      "symbol": "MainMenuViewController.gameName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 17,
+      "symbol": "MainMenuViewController.backGroundImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 19,
+      "symbol": "MainMenuViewController.startGame(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 22,
+      "symbol": "MainMenuViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift",
+      "line": 26,
+      "symbol": "MainMenuViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 21,
+      "symbol": "locationOfPipeForWater.lefter",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 21,
+      "symbol": "locationOfPipeForWater.lower",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 21,
+      "symbol": "locationOfPipeForWater.righter",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 21,
+      "symbol": "locationOfPipeForWater.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 21,
+      "symbol": "locationOfPipeForWater.upper",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.anglePipeLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.anglePipeRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.horizontalStraightPipe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.leftAnglePipeDown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.rightAnglePipeDown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Danil/Desktop/pipes/pipes/Pipes.swift",
+      "line": 34,
+      "symbol": "TypesOfPipe.verticalStraightPipe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/Danil/Desktop/pipes"
+}

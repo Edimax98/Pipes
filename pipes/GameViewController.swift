@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  pipes
 //
-//  Created by Даниил Смирнов on 30.11.16.
+//  Created by Даниил Смирнов
 //  Copyright © 2016 Даниил Смирнов. All rights reserved.
 //
 
@@ -39,28 +39,34 @@ class GameViewController: UIViewController {
         // Create and configure the scene.
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
-        
-        //Render a level
+
+        // Render a level
         level = Level(filename: "Level_1")
         scene.level = level
         scene.addCells()
-        
         // Present the scene.
+        scene.viewController = self
         skView.presentScene(scene)
         
         beginGame()
     }
     
+    /// Начинается игра
+    /// - Returns: Void
     func beginGame(){
         renderBoxes()
         renderPipes()
     }
     
+    /// Отображение коробок
+    /// - Returns: Void
     func renderBoxes() {
         let newBoxes = level.showBoxes()
         scene.addBoxes(boxes: newBoxes)
     }
     
+    /// Отображение первоначальных труб
+    /// - Returns: Void
     func renderPipes() {
         let newPipes = level.showPipes()
         scene.addSprites(for: newPipes)

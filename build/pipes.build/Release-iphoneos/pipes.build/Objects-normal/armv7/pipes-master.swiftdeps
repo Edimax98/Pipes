@@ -1,0 +1,15 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "4f6d338c3705eb497bcd501ab8422f0b"
+build_time: [538579009, 467695000]
+inputs:
+  "/Users/Danil/Desktop/pipes/pipes/GameScene.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/MainMenuView.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/Cell.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/GameViewController.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/AppDelegate.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/Array2D.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/Pipes.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/MainMenuViewController.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/Level.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/PipeMaker.swift": [9223372036854775807, 0]
+  "/Users/Danil/Desktop/pipes/pipes/Extention.swift": [9223372036854775807, 0]
